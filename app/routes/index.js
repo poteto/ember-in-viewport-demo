@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       { id: 5,  name: 'Romina',  image: 'http://i.imgur.com/kkkaBYc.jpg' },
       { id: 6,  name: 'Dan',     image: 'http://i.imgur.com/409INxL.jpg' },
       { id: 7,  name: 'Lin',     image: 'http://i.imgur.com/38vd8YE.jpg' },
-      { id: 8,  name: 'Marin',   image: 'http://i.imgur.com/kJxsoIG.jpg' },
+      { id: 8,  name: 'Marin',   image: 'http://i.imgur.com/fM2GpMn.jpg' },
       { id: 9,  name: 'Steven',  image: 'http://i.imgur.com/g9D6et6.jpg' },
       { id: 10, name: 'Maria',   image: 'http://i.imgur.com/yP8Mm0R.jpg' },
       { id: 11, name: 'Mike',    image: 'http://i.imgur.com/WuCtxDs.jpg' },
