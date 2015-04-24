@@ -13,11 +13,20 @@ export default Ember.Component.extend(InViewportMixin, {
 
   viewportOptionsOveride: on('didInsertElement', function() {
     setProperties(this, {
-      viewportSpy: true,
+      viewportUseRAF : true,
+      viewportSpy    : true,
       viewportTolerance: {
         top    : 200,
         bottom : 200
       }
     });
+  }),
+
+  handleDidEnterViewport: on('didEnterViewport', function() {
+    Ember.Logger.log('entered');
+  }),
+
+  handleDidExitViewport: on('didExitViewport', function() {
+    Ember.Logger.log('exited');
   })
 });
