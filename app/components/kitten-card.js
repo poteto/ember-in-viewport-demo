@@ -6,6 +6,8 @@ const {
   setProperties
 } = Ember;
 
+const { log } = Ember.Logger;
+
 export default Ember.Component.extend(InViewportMixin, {
   tagName           : 'li',
   classNames        : [ 'kittenCard-container' ],
@@ -13,20 +15,37 @@ export default Ember.Component.extend(InViewportMixin, {
 
   viewportOptionsOveride: on('didInsertElement', function() {
     setProperties(this, {
-      viewportUseRAF : true,
-      viewportSpy    : true,
-      viewportTolerance: {
-        top    : 200,
-        bottom : 200
-      }
+      viewportScrollSensitivity: 20,
+      viewportListeners: [
+        { context: window, event: 'scroll.scrollable' },
+        { context: window, event: 'resize.resizable' },
+        { context: document, event: 'touchmove.scrollable' },
+        { context: '#ember-application', event: 'scroll.scrollable' }
+      ]
     });
   }),
 
-  handleDidEnterViewport: on('didEnterViewport', function() {
-    Ember.Logger.log('entered');
-  }),
+  didEnterViewport() {
+    log('entered');
+  },
 
-  handleDidExitViewport: on('didExitViewport', function() {
-    Ember.Logger.log('exited');
-  })
+  didExitViewport() {
+    log('exited');
+  },
+
+  didScrollUp(direction) {
+    log(direction);
+  },
+
+  didScrollDown(direction) {
+    log(direction);
+  },
+
+  didScrollLeft(direction) {
+    log(direction);
+  },
+
+  didScrollRight(direction) {
+    log(direction);
+  }
 });

@@ -26,6 +26,16 @@ module.exports = function(environment) {
       'img-src': "'self' p.typekit.net google-analytics.com lorempixel.com *.googleapis.com *.gstatic.com placeimg.com *.imgur.com",
       'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
       'media-src': "'self'"
+    },
+
+    viewportConfig: {
+      viewportUseRAF            : true,
+      viewportSpy               : true,
+      viewportScrollSensitivity : 10,
+      viewportTolerance: {
+        top    : 200,
+        bottom : 200
+      }
     }
   };
 
