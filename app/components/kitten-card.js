@@ -33,19 +33,7 @@ export default Ember.Component.extend(InViewportMixin, {
     log('exited');
   },
 
-  didScrollUp(direction) {
-    log(direction);
-  },
-
-  didScrollDown(direction) {
-    log(direction);
-  },
-
-  didScrollLeft(direction) {
-    log(direction);
-  },
-
-  didScrollRight(direction) {
+  didScroll(direction) {
     log(direction);
   }
 });
