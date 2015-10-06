@@ -29,12 +29,12 @@ module.exports = function(environment) {
     },
 
     viewportConfig: {
-      viewportUseRAF            : true,
-      viewportSpy               : true,
-      viewportScrollSensitivity : 10,
+      viewportUseRAF: true,
+      viewportSpy: true,
+      viewportScrollSensitivity: 10,
       viewportTolerance: {
-        top    : 200,
-        bottom : 200
+        top: 200,
+        bottom: 200
       }
     }
   };
