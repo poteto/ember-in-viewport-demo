@@ -31,10 +31,10 @@ module.exports = function(environment) {
     viewportConfig: {
       viewportUseRAF: true,
       viewportSpy: true,
-      viewportScrollSensitivity: 10,
+      viewportScrollSensitivity: 20,
       viewportTolerance: {
-        top: 200,
-        bottom: 200
+        top: 250,
+        bottom: 250
       }
     }
   };

@@ -2,38 +2,33 @@ import Ember from 'ember';
 import InViewportMixin from 'ember-in-viewport';
 
 const {
-  on,
-  setProperties
+  Component,
+  computed,
+  get,
+  set
 } = Ember;
 
-const { log } = Ember.Logger;
+const directionMap = {
+  left: '←',
+  up: '↑',
+  right: '→',
+  down: '↓',
+  none: '¯\\_(ツ)_/¯'
+};
 
-export default Ember.Component.extend(InViewportMixin, {
-  tagName           : 'li',
-  classNames        : [ 'kittenCard-container' ],
-  classNameBindings : [ 'viewportEntered:active:inactive' ],
+export default Component.extend(InViewportMixin, {
+  tagName: 'li',
+  classNames: ['kittenCard-container'],
+  classNameBindings: ['viewportEntered:active:inactive'],
+  lastDirection: null,
 
-  viewportOptionsOveride: on('didInsertElement', function() {
-    setProperties(this, {
-      viewportScrollSensitivity: 20,
-      viewportListeners: [
-        { context: window, event: 'scroll.scrollable' },
-        { context: window, event: 'resize.resizable' },
-        { context: document, event: 'touchmove.scrollable' },
-        { context: '#ember-application', event: 'scroll.scrollable' }
-      ]
-    });
+  isInViewport: computed('viewportEntered', {
+    get() {
+      return get(this, 'viewportEntered') ? 'Entered' : 'Exited';
+    }
   }),
 
-  didEnterViewport() {
-    log('entered');
-  },
-
-  didExitViewport() {
-    log('exited');
-  },
-
   didScroll(direction) {
-    log(direction);
+    set(this, 'lastDirection', directionMap[direction]);
   }
 });

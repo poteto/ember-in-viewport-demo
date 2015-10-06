@@ -23,6 +23,7 @@ html, body {
 .kittenCard {
   padding: 20px;
   border: 2px solid #fdc61d;
+  min-height: 400px;
 
   &-title {
     margin-top: 20px;
@@ -34,4 +35,10 @@ html, body {
     opacity: 0.5;
     transition: opacity 0.1s ease-in-out;
   }
+}
+
+.kitten-counter {
+  padding: 10px 10px;
+  z-index: 10000;
+  text-align: center;
 }
